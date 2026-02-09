@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-heading: "Space Grotesk", sans-serif;
+    --font-body: "Jost", sans-serif;
+}
+
+:root {
+    color-scheme: dark;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #090A17;
+    color: white;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+/* Custom Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grid-bg {
+    background-size: 40px 40px;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.glow-white {
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+}
+
+.glow-gray {
+    background: radial-gradient(circle at center, rgba(100, 100, 100, 0.1) 0%, transparent 70%);
+}
+
+.pill-nav {
+    /* More transparent, stronger blur for a frosted glass navbar */
+    background: linear-gradient(180deg, rgba(9,10,23,0.28) 0%, rgba(9,10,23,0.22) 100%);
+    background-color: rgba(9,10,23,0.22);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    /* softer inner highlight and slightly lifted shadow */
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.01), 0 12px 40px rgba(2,6,23,0.5);
+    transition: background-color 180ms ease, backdrop-filter 180ms ease, box-shadow 180ms ease;
+}
+
+/* Neon indicator for active nav item */
+
+/* Neon glow applied directly to the SVG icon when active */
+.neon-icon {
+    stroke: rgba(170,255,255,0.98);
+    color: rgba(170,255,255,0.98);
+    filter: drop-shadow(0 6px 12px rgba(0,245,255,0.12)) drop-shadow(0 0 28px rgba(139,92,246,0.10));
+    transition: transform 180ms ease, filter 220ms ease, stroke 160ms ease;
+}
+
+.neon-icon:hover {
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* default small dim icon color */
+.nav-icon {
+    stroke: rgba(255,255,255,0.72);
+}
+
+/* Custom cursor (large soft dot) */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    margin-left: -9px;
+    margin-top: -9px;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: screen;
+    background: rgba(255,255,255,0.06);
+    box-shadow: 0 6px 20px rgba(170,255,255,0.06), 0 0 8px rgba(139,92,246,0.06);
+    transition: width 120ms ease, height 120ms ease, background 120ms ease, transform 120ms ease;
+}
+
+.custom-cursor--active {
+    width: 36px;
+    height: 36px;
+    margin-left: -18px;
+    margin-top: -18px;
+    background: rgba(170,255,255,0.06);
+}
+
+/* slightly reduce tooltip brightness to keep focus on neon */
+.pill-nav .bg-white\/7 { /* matches tooltip bg used inline */
+    background-color: rgba(255,255,255,0.06);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #090A17;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3a;
+}
