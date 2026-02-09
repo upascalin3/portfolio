@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import Spline from '@splinetool/react-spline';
+import profileImg from '../assets/profile.png';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -177,9 +177,10 @@ const Contact = () => {
                         transition={{ duration: 0.8 }}
                         className="order-1 lg:order-2 h-[500px] lg:h-[700px] relative rounded-3xl overflow-hidden border border-white/10 bg-[#090A17]"
                     >
-                        <Spline
-                            scene="https://prod.spline.design/g1ku9Y5vIh2fLG1G/scene.splinecode"
-                            className="w-full h-full"
+                        <img
+                            src={profileImg}
+                            alt="Profile"
+                            className="w-full h-full object-cover"
                         />
 
                         {/* Decorative Corner Accents */}
