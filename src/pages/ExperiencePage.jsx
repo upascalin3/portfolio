@@ -9,8 +9,8 @@ export default function ExperiencePage() {
           <SectionLabel>Experience</SectionLabel>
           <h1 className="mt-4 font-display text-5xl italic md:text-7xl">Work so far</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted">
-            Internships and contributions where I learned how software is built in collaboration,
-            especially around application logic, data, and healthcare systems.
+            Roles where I learned how software is built, deployed, and kept running — in school
+            systems, internships, and healthcare technology.
           </p>
         </FadeIn>
 

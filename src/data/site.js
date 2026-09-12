@@ -80,6 +80,22 @@ export const about = {
 
 export const experience = [
   {
+    id: 'rca-mis',
+    org: 'RCA MIS',
+    role: 'DevOps Engineer · Rwanda Coding Academy',
+    date: 'November 2024 – May 2026',
+    description:
+      "RCA MIS was a centralized digital ecosystem that brought the school's academic and administrative operations into one platform. As a DevOps Engineer, I worked behind the scenes to keep the system secure, reliable, scalable, and performant. The platform connected students, teachers, and staff and supported essential operations such as course management, grades, student information, and finances. My role focused on the infrastructure and operational side of the system, helping ensure that services remained available and could scale as usage increased.",
+    highlights: [
+      'DevOps',
+      'Infrastructure',
+      'Deployment',
+      'Reliability',
+      'Security',
+      'Scalability',
+    ],
+  },
+  {
     id: 'sacola',
     org: 'SACOLA',
     role: 'Full-Stack Developer Intern',
@@ -739,6 +755,11 @@ export const journey = [
     place: 'Rwanda Coding Academy',
     role: 'Software Programming & Embedded Systems',
     date: '2023–2026',
+  },
+  {
+    place: 'RCA MIS',
+    role: 'DevOps Engineer · Rwanda Coding Academy',
+    date: 'November 2024 – May 2026',
   },
   {
     place: 'SACOLA',
