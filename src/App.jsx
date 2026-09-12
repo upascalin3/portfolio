@@ -1,36 +1,33 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Expertise from './components/Expertise';
-import Services from './components/Services';
-import Projects from './components/Projects';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import AboutPage from './pages/AboutPage';
+import ResearchPage from './pages/ResearchPage';
+import ResearchDetail from './pages/ResearchDetail';
+import ProjectsPage from './pages/ProjectsPage';
+import ProjectDetail from './pages/ProjectDetail';
+import ExperiencePage from './pages/ExperiencePage';
+import ImpactPage from './pages/ImpactPage';
+import ContactPage from './pages/ContactPage';
+import NotFound from './pages/NotFound';
 
-function App() {
+export default function App() {
   return (
-    <main className="bg-[#090A17] min-h-screen text-white">
-      <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Skills />
-      <Expertise />
-      <Services />
-      <Projects />
-      <Testimonials />
-      <Contact />
-
-      <footer className="py-12 border-t border-white/5 text-center">
-        <p className="text-white/20 text-sm tracking-widest uppercase">
-          &copy; 2026 Pascaline. Built for the modern web.
-        </p>
-      </footer>
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/research" element={<ResearchPage />} />
+          <Route path="/research/:slug" element={<ResearchDetail />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
+          <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/impact" element={<ImpactPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;

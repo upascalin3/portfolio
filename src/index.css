@@ -1,126 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-    --font-heading: "Space Grotesk", sans-serif;
-    --font-body: "Jost", sans-serif;
+  --font-display: "Instrument Serif", "Times New Roman", serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-ink: #0a0d12;
+  --color-ink-2: #11161e;
+  --color-ink-3: #181e28;
+  --color-paper: #f1ece3;
+  --color-paper-soft: #d8d2c6;
+  --color-muted: #9a9488;
+  --color-bronze: #c9a36a;
+  --color-bronze-dim: #8d7043;
+  --color-signal: #7ea8b8;
+  --color-line: rgba(241, 236, 227, 0.1);
 }
 
 :root {
-    color-scheme: dark;
+  color-scheme: dark;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
 }
 
 body {
-    margin: 0;
-    background-color: #090A17;
-    color: white;
-    font-family: var(--font-body);
-    overflow-x: hidden;
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Custom Glassmorphism */
-.glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+::selection {
+  background: color-mix(in oklab, var(--color-bronze) 45%, transparent);
+  color: var(--color-paper);
 }
 
-.grid-bg {
-    background-size: 40px 40px;
-    background-image:
-        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-bronze);
+  outline-offset: 3px;
 }
 
-.glow-white {
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-.glow-gray {
-    background: radial-gradient(circle at center, rgba(100, 100, 100, 0.1) 0%, transparent 70%);
+.grid-fade {
+  background-image:
+    linear-gradient(to right, rgba(241, 236, 227, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(241, 236, 227, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
 }
 
-.pill-nav {
-    /* More transparent, stronger blur for a frosted glass navbar */
-    background: linear-gradient(180deg, rgba(9,10,23,0.28) 0%, rgba(9,10,23,0.22) 100%);
-    background-color: rgba(9,10,23,0.22);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.02);
-    /* softer inner highlight and slightly lifted shadow */
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.01), 0 12px 40px rgba(2,6,23,0.5);
-    transition: background-color 180ms ease, backdrop-filter 180ms ease, box-shadow 180ms ease;
+.rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-line), transparent);
 }
 
-/* Neon indicator for active nav item */
-
-/* Neon glow applied directly to the SVG icon when active */
-.neon-icon {
-    stroke: rgba(170,255,255,0.98);
-    color: rgba(170,255,255,0.98);
-    filter: drop-shadow(0 6px 12px rgba(0,245,255,0.12)) drop-shadow(0 0 28px rgba(139,92,246,0.10));
-    transition: transform 180ms ease, filter 220ms ease, stroke 160ms ease;
-}
-
-.neon-icon:hover {
-    transform: translateY(-2px) scale(1.02);
-}
-
-/* default small dim icon color */
-.nav-icon {
-    stroke: rgba(255,255,255,0.72);
-}
-
-/* Custom cursor (large soft dot) */
-.custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 18px;
-    height: 18px;
-    margin-left: -9px;
-    margin-top: -9px;
-    border-radius: 999px;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: screen;
-    background: rgba(255,255,255,0.06);
-    box-shadow: 0 6px 20px rgba(170,255,255,0.06), 0 0 8px rgba(139,92,246,0.06);
-    transition: width 120ms ease, height 120ms ease, background 120ms ease, transform 120ms ease;
-}
-
-.custom-cursor--active {
-    width: 36px;
-    height: 36px;
-    margin-left: -18px;
-    margin-top: -18px;
-    background: rgba(170,255,255,0.06);
-}
-
-/* slightly reduce tooltip brightness to keep focus on neon */
-.pill-nav .bg-white\/7 { /* matches tooltip bg used inline */
-    background-color: rgba(255,255,255,0.06);
-}
-
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #090A17;
+  background: var(--color-ink);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #2a2a2a;
-    border-radius: 4px;
+  background: #2a3140;
+  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #3a3a3a;
+  background: #3a4354;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
