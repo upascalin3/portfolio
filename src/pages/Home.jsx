@@ -77,6 +77,12 @@ export default function Home() {
               <a href="#about" className="inline-flex items-center justify-center border border-line px-5 py-3 text-sm hover:border-paper-soft">
                 About Me
               </a>
+              <Link
+                to="/resume"
+                className="inline-flex items-center justify-center border border-bronze px-5 py-3 text-sm text-bronze hover:bg-bronze hover:text-ink"
+              >
+                View Resume
+              </Link>
               <a href="#contact" className="inline-flex items-center justify-center border border-line px-5 py-3 text-sm hover:border-paper-soft">
                 Contact
               </a>
@@ -439,6 +445,20 @@ export default function Home() {
                   className="inline-flex items-center gap-2 border border-line px-5 py-3 text-sm hover:border-paper-soft"
                 >
                   <Linkedin size={16} /> LinkedIn
+                </a>
+                <Link
+                  to="/resume"
+                  className="inline-flex items-center justify-center border border-bronze px-5 py-3 text-sm text-bronze hover:bg-bronze hover:text-ink"
+                >
+                  View Resume
+                </Link>
+                <a
+                  href={person.resumeDoc}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center border border-line px-5 py-3 text-sm hover:border-paper-soft"
+                >
+                  Google Doc
                 </a>
               </div>
               <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">

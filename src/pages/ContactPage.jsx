@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { contact, person } from '../data/site';
 import { FadeIn, SectionLabel } from '../components/ui';
@@ -40,6 +41,20 @@ export default function ContactPage() {
               >
                 <Linkedin size={16} /> LinkedIn
               </a>
+              <Link
+                to="/resume"
+                className="inline-flex items-center justify-center border border-bronze px-5 py-3 text-sm text-bronze hover:bg-bronze hover:text-ink"
+              >
+                View Resume
+              </Link>
+              <a
+                href={person.resumeDoc}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center border border-line px-5 py-3 text-sm hover:border-paper-soft"
+              >
+                Google Doc
+              </a>
             </div>
 
             <dl className="mt-12 grid gap-8 border-t border-line pt-10">
@@ -62,6 +77,22 @@ export default function ContactPage() {
               <div>
                 <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">Portfolio</dt>
                 <dd className="mt-2">portfolio-uwayo.vercel.app</dd>
+              </div>
+              <div>
+                <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">Resume</dt>
+                <dd className="mt-2">
+                  <Link to="/resume" className="text-paper hover:text-bronze">
+                    View on this site
+                  </Link>
+                  <span className="text-muted"> · </span>
+                  <a href={person.resumePdf} target="_blank" rel="noreferrer" className="text-paper hover:text-bronze">
+                    PDF
+                  </a>
+                  <span className="text-muted"> · </span>
+                  <a href={person.resumeDoc} target="_blank" rel="noreferrer" className="text-paper hover:text-bronze">
+                    Google Doc
+                  </a>
+                </dd>
               </div>
             </dl>
           </div>

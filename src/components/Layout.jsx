@@ -44,7 +44,7 @@ function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-5 xl:gap-7 lg:flex">
           {nav.map((item) => (
             <NavLink
               key={item.to}
@@ -114,6 +114,12 @@ function Footer() {
           </a>
           <a href={`mailto:${person.email}`} className="hover:text-paper">
             Email
+          </a>
+          <Link to="/resume" className="hover:text-paper">
+            Resume
+          </Link>
+          <a href={person.resumeDoc} target="_blank" rel="noreferrer" className="hover:text-paper">
+            Google Doc
           </a>
         </div>
       </div>

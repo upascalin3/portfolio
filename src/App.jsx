@@ -9,6 +9,7 @@ import ProjectDetail from './pages/ProjectDetail';
 import ExperiencePage from './pages/ExperiencePage';
 import ImpactPage from './pages/ImpactPage';
 import ContactPage from './pages/ContactPage';
+import ResumePage from './pages/ResumePage';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/experience" element={<ExperiencePage />} />
           <Route path="/impact" element={<ImpactPage />} />
+          <Route path="/resume" element={<ResumePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>

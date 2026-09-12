@@ -114,6 +114,12 @@ export default function AboutPage() {
           <Link to="/projects" className="border border-line px-5 py-3 text-sm hover:border-paper-soft">
             Projects
           </Link>
+          <Link
+            to="/resume"
+            className="border border-bronze px-5 py-3 text-sm text-bronze hover:bg-bronze hover:text-ink"
+          >
+            View Resume
+          </Link>
           <Link to="/contact" className="bg-paper px-5 py-3 text-sm text-ink hover:bg-paper-soft">
             Contact
           </Link>

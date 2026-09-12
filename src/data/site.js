@@ -17,6 +17,9 @@ export const person = {
   linkedin: 'https://www.linkedin.com/in/uwayo-pascaline-0968903b7/',
   portfolio: 'https://portfolio-uwayo.vercel.app',
   email: 'uwayopascaline87@gmail.com',
+  resumePdf: '/resume.pdf',
+  resumeDoc:
+    'https://docs.google.com/document/d/19MQ7Fzy9nqWLuiCPkhnvaAlBxHWu-Ce8EgEZuiCozuk/preview',
   interests: [
     'Software Engineering',
     'Artificial Intelligence',
@@ -725,6 +728,7 @@ export const nav = [
   { to: '/projects', label: 'Projects' },
   { to: '/experience', label: 'Experience' },
   { to: '/impact', label: 'Impact' },
+  { to: '/resume', label: 'Resume' },
   { to: '/contact', label: 'Contact' },
 ];
 
