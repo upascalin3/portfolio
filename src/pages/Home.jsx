@@ -319,7 +319,7 @@ export default function Home() {
           <div className="mt-12">
             <Expandable
               items={skillGroups}
-              previewCount={3}
+              previewCount={4}
               moreLabel="More skills"
               className="grid gap-10 md:grid-cols-2 lg:grid-cols-3"
               render={([group, items]) => (
